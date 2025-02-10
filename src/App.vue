@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import codes from "./data/codes.json"; 
 import CountryData from './components/CountryData.vue';
+import GoogleChart from './components/GoogleChart.vue';
 
 const name = ref('');
 const selected = ref([]);
@@ -87,7 +88,9 @@ onMounted(async () => {
       </span>
     </div>
 
-    <div class="chart"></div>
+    <div class="chart">
+      <GoogleChart :data="codeData"/>
+    </div>
 
   </div>
 </template>
